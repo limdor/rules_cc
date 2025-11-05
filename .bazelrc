@@ -1,2 +1,9 @@
 # Required by googletest 1.17.
 common --cxxopt=-std=c++17
+
+# If a command fails, print out the full command line
+build --verbose_failures
+
+build --extra_toolchains=//examples/inject_extra_features/toolchain:my_linux_toolchain
+build --incompatible_enable_cc_toolchain_resolution
+build --toolchain_resolution_debug=.*
